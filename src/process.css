@@ -1,0 +1,69 @@
+.lk-process {
+  --plum: #1d1030;
+  --lime: #bcfa66;
+  font-family: Poppins, sans-serif;
+  scroll-margin-top: 76px;
+}
+.lk-process h2,.lk-process h3 { font-family: 'League Spartan', sans-serif; letter-spacing: -.052em; }
+.lk-process-intro { background: #f5f3ff; color: var(--plum); padding: clamp(60px,7.4vw,120px) max(6vw,calc((100% - 1240px)/2)); }
+.lk-process-label { display: inline-flex; align-items: center; gap: 12px; font-size: .8rem; font-weight: 600; letter-spacing: .115em; text-transform: uppercase; color:#5b3781 }
+.lk-process-label i { display:inline-block; width: 28px; height: 2px; background:#7c3aed; }
+.lk-process-intro-grid { display:grid; grid-template-columns: 1.35fr .8fr; gap: 8%; align-items: end; margin-top: 22px; }
+.lk-process-intro-grid h2 { margin:0; font-size:clamp(3.2rem,6.1vw,6.4rem); line-height:.93; font-weight:700; }
+.lk-process-intro-grid p,.lk-stage-copy p,.lk-process-close p { margin:0; }
+.lk-process-intro-grid p { color:#514b5c; font-size:1rem; line-height:1.75; max-width:42ch; }
+.lk-process-track { height: 330vh; position:relative; background:#1a1025; }
+.lk-process-studio { --process-progress:.035; --model-scale:1; position: sticky; top:74px; height:calc(100vh - 74px); height:calc(100svh - 74px); display:grid; align-items:center; color:#faf8ff; isolation:isolate; overflow:hidden; background:radial-gradient(ellipse at 26% 50%,#402153 0%,#24142f 38%,#170e20 79%); }
+.lk-process-studio::before { content:''; position:absolute; inset:0; pointer-events:none; z-index:-1; opacity:.18; background-image:linear-gradient(#835d9d38 1px,transparent 1px),linear-gradient(90deg,#835d9d38 1px,transparent 1px); background-size:48px 48px; }
+.lk-process-studio::after { content:''; position:absolute; z-index:-1; pointer-events:none; inset:0; opacity:var(--studio-color,0); background:radial-gradient(ellipse at 12% 86%,#718f3c80,transparent 45%),radial-gradient(ellipse at 51% 4%,#873cff70,transparent 50%); }
+.lk-process-shell { margin:auto; width:min(88%,1240px); display:grid; grid-template-columns:1.2fr .85fr; gap:7%; align-items:center; padding-block:15px; }
+.lk-process-art { position:relative; min-width:0; }
+.lk-model-stack { aspect-ratio:1; width:min(100%,64vh); position:relative; margin:auto; transform:scale(var(--model-scale)) rotate(var(--model-tilt,0deg)); }
+.lk-stage-render,.lk-sequence-frame { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; pointer-events:none; -webkit-mask-image:radial-gradient(ellipse closest-side,#000 74%,#000e 90%,transparent 138%); mask-image:radial-gradient(ellipse closest-side,#000 74%,#000e 90%,transparent 138%); }
+.lk-stage-render:nth-child(3) { transform:translateY(var(--packing-shift,0%)); }
+.lk-sequence-frame { opacity:0; }
+.lk-reticle { width:16px; height:16px; position:absolute; opacity:.58; }
+.lk-reticle-one { top:3%; left:0; border-top:1px solid #bfa9d9; border-left:1px solid #bfa9d9; }
+.lk-reticle-two { right:0; bottom:3%; border-right:1px solid #bfa9d9; border-bottom:1px solid #bfa9d9; }
+.lk-process-index { display:flex; align-items:center; gap:8px; font:500 .85rem/1.25 Poppins,sans-serif; letter-spacing:.11em; }
+.lk-process-index span:first-child { color:var(--lime); }
+.lk-process-index span:last-child { color:#a99cb5; }
+.lk-stage-copy { animation: lk-process-reveal .32s ease-out both; }
+.lk-stage-copy h3 { color:#fff; font-size:clamp(2.8rem,5.2vw,5.6rem); font-weight:700; line-height:.96; margin:24px 0 16px; }
+.lk-stage-copy p { color:#d1c7d9; font-size:1rem; line-height:1.7; max-width:46ch; }
+.lk-stage-nav { margin-top:clamp(20px,3.2vh,42px); display:grid; grid-template-columns:1fr 1fr; gap:0 20px; }
+.lk-stage-nav button { text-align:left; appearance:none; padding:11px 0; background:none; border:0; border-bottom:1px solid #54435f; border-radius:0; color:#c9bbd4; font-family:inherit; font-size:.9rem; cursor:pointer; transition:color .17s,border-color .17s; }
+.lk-stage-nav button span { color:#a694b3; font-size:.75rem; margin-right:10px; font-variant-numeric:tabular-nums; }
+.lk-stage-nav button[aria-pressed=true],.lk-stage-nav button[aria-pressed=true] span,.lk-stage-nav button:hover { color:var(--lime); border-color:var(--lime); }
+.lk-process button:focus-visible,.lk-process a:focus-visible { outline:3px solid #9c70f6; outline-offset:4px; }
+.lk-studio-progress { position:absolute; bottom:0; height:3px; inset-inline:0; background:#412e50; }
+.lk-studio-progress i { height:100%; width:100%; display:block; transform-origin:left; transform: scaleX(var(--process-progress)); background:linear-gradient(90deg,#8b50f3,var(--lime)); }
+.lk-process-close { background:#c8f78a; color:#251336; padding:clamp(40px,5.5vw,95px) max(6vw,calc((100% - 1240px)/2)); display:flex; gap:30px; align-items:center; justify-content:space-between; }
+.lk-process-close h2 { color:#251336; font-weight:800; font-size:clamp(2.3rem,4vw,4.8rem); line-height:1; margin:0 0 8px; }
+.lk-process-close p { color:#372744; font-size:1rem; }
+.lk-process-close a { white-space:nowrap; color:white; background:#291238; font-size:.92rem; font-weight:600; border-radius:999px; padding:15px 24px; text-decoration:none; transition:background .2s; }
+.lk-process-close a:hover { background:#47225f; }
+@keyframes lk-process-reveal { from { opacity:.2; transform:translateY(7px); } to { opacity:1; transform:none; } }
+@media (max-width:760px) {
+ .lk-process-intro-grid { grid-template-columns:1fr; gap:19px; }
+ .lk-process-intro-grid h2 { font-size:clamp(3.1rem,9vw,4.5rem); }
+ .lk-process-shell { grid-template-columns:1fr; gap:8px; margin:0 auto; padding:12px 0 22px; }
+ .lk-process-track { height:300vh; }
+ .lk-model-stack { width:min(100%,32svh); }
+ .lk-process-art { width:min(100%,43svh); margin:auto; }
+ .lk-stage-copy h3 { margin:10px 0 8px; font-size:clamp(2.2rem,7vw,3.6rem); }
+ .lk-stage-copy p { line-height:1.48; max-width:unset; }
+ .lk-stage-nav { margin-top:12px; gap:0 12px; }
+ .lk-stage-nav button { padding:9px 0; }
+ .lk-process-close { align-items:flex-start; flex-direction:column; gap:20px; }
+}
+@media (prefers-reduced-motion:reduce),(max-height:570px) {
+ .lk-process-track { height:auto; }
+ .lk-process-studio { position:relative; top:0; height:auto; padding-block:38px; }
+ .lk-model-stack { width:min(100%,430px); }
+ .lk-stage-copy { animation:none; }
+}
+@media (max-width:380px) and (min-height:571px) {
+ .lk-model-stack { width:min(100%,25svh); }
+ .lk-process-shell { width:92%; }
+}
