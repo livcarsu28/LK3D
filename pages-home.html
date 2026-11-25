@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /index.html
+---
+{% capture entry %}{% include_relative dist/index.html %}{% endcapture %}
+{% assign assets = '/dist/assets/' | relative_url %}
+{% assign config = '/config.js' | relative_url %}
+{% assign script = '/studio.js' | relative_url %}
+{% assign style = '/studio.css' | relative_url %}
+{% for file in site.static_files %}
+  {% if file.path contains '/dist/assets/index-' %}
+    {% assign bundle = '/assets/' | append: file.name %}
+    {% if file.extname == '.js' %}{% assign entry = entry | replace: bundle, script %}{% endif %}
+    {% if file.extname == '.css' %}{% assign entry = entry | replace: bundle, style %}{% endif %}
+  {% endif %}
+{% endfor %}
+{{ entry | replace: '/assets/', assets | replace: '/config.js', config }}

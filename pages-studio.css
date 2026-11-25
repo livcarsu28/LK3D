@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /studio.css
+---
+{% assign assets = '/dist/assets/' | relative_url %}
+{% for file in site.static_files %}
+{% if file.path contains '/dist/assets/index-' and file.extname == '.css' %}
+{% assign bundle = file.path | remove_first: '/' %}
+{% capture compiled %}{% include_relative {{ bundle }} %}{% endcapture %}
+{{ compiled | replace: '/assets/', assets }}
+{% endif %}
+{% endfor %}

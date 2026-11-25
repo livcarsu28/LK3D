@@ -1,0 +1,10 @@
+# GitHub Pages publishes the compiled Vite application through the pages-* templates.
+baseurl: /LK3D
+exclude:
+  - /index.html
+  - src
+  - public
+  - package.json
+  - package-lock.json
+  - tsconfig.json
+  - vite.config.ts
